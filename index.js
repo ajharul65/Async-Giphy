@@ -5,9 +5,19 @@ console.log(process.env.API_KEY)
 
 
 async function getImages(query){
+    try{
     const response =  await fetch (endpoint)
     const data = await response.json()
     
-    const img = 
+    const img = data.results[0].url
+    console.log(img)
+
+    return img
+
 
 }
+catch (error){
+    console.error('There was an error fetching the image')
+}
+}
+
